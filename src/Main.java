@@ -2,14 +2,14 @@
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
     public static void main(String[] args) {
-        //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-        // to see how IntelliJ IDEA suggests fixing it.
-        System.out.println("Hello and welcome!");
-
-        for (int i = 1; i <= 5; i++) {
-            //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
-            // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
-            System.out.println("i = " + i);
-        }
+        Author gogol = new Author("Николай", "Гоголь");
+        Author coelho = new Author("Пауло", "Коэльо");
+        Book deadSouls = new Book("Мертвые души", gogol, 1842);
+        Book alchemist = new Book("Алхимик", coelho, 1988);
+        System.out.println("Название книги:" + deadSouls.getTitle() + ", Автор:" + deadSouls.getAuthor().getFirstName() + " " + deadSouls.getAuthor().getLastName() + ", Год издания:" + deadSouls.getYearPublication());
+        System.out.println("Название книги:" + alchemist.getTitle() + ", Автор:" + alchemist.getAuthor().getFirstName() + " " + alchemist.getAuthor().getLastName() + ", Год издания:" + alchemist.getYearPublication());
+        deadSouls.setYearPublication(1843);
+        System.out.println("Название книги:" + deadSouls.getTitle() + ", Автор:" +
+                "" + deadSouls.getAuthor().getFirstName() + " " + deadSouls.getAuthor().getLastName() + ", Год издания:" + deadSouls.getYearPublication());
     }
 }
